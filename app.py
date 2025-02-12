@@ -145,18 +145,18 @@ def landing_page():
             with st.spinner("Redirecting to Instant Messaging..."):
                 time.sleep(1)
             st.session_state.page = "instant"
-            st.experimental_rerun()
+            st.rerun()
     with col2:
         if st.button("Scheduling Message"):
             with st.spinner("Redirecting to Scheduling Message..."):
                 time.sleep(1)
             st.session_state.page = "scheduling"
-            st.experimental_rerun()
+            st.rerun()
 
 def instant_messaging_page():
     if st.button("← Go Back"):
         st.session_state.page = "landing"
-        st.experimental_rerun()
+        st.rerun()
 
     st.markdown("<h1 style='text-align: center;'>Instant Messaging</h1>", unsafe_allow_html=True)
     st.write("Fill in the details below to send your notification immediately.")
@@ -199,7 +199,7 @@ def instant_messaging_page():
 def scheduling_message_page():
     if st.button("← Go Back"):
         st.session_state.page = "landing"
-        st.experimental_rerun()
+        st.rerun()
 
     st.markdown("<h1 style='text-align: center;'>Scheduling Message</h1>", unsafe_allow_html=True)
     st.write("Fill in the details below to schedule your notification. The message will trigger on the set date.")
